@@ -1,4 +1,4 @@
-package org.Interface.classe;//Import necessário para escanear respostas do usuário
+package org.gremio.classe;//Import necessário para escanear respostas do usuário
 import java.util.Scanner;
 
 public class Cliente extends Usuario {

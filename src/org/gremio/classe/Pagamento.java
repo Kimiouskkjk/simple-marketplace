@@ -1,4 +1,4 @@
-package org.Interface.classe;
+package org.gremio.classe;
 
 public class Pagamento {
     public static double calcularValorFinal(double valor, int metodo, int parcelas) {

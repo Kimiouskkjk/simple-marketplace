@@ -1,4 +1,4 @@
-package org.Interface.classe;
+package org.gremio.classe;
 
 public class Usuario {
     String name;

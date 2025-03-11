@@ -1,5 +1,5 @@
-package org.Interface.testes;
-import org.Interface.database.ConnectionDB;
+package org.gremio.testes;
+import org.gremio.database.ConnectionDB;
 
 
 public class Main {
