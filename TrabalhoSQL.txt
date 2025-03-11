@@ -1,9 +1,5 @@
--- Eae ismagod!!!!!! Só dando uma auxiliada mesmo, fiz umas alterações aqui, são as seguintes:
--- Valores R$ alterei de DOUBLE para DECIMAL(10,2). Pq decimal(10,2)? No formato 10,2 ele limita a quantidade de números após a virgula para 2, assim ficando no padrão certo do Brasil R$420,69
--- Retirei os ALTER TABLE que adicionavam colunas novas e coloquei diretamente na criação delas, deixando mais simples de rodar
--- Também FOREIGN KEYs coloquei direto no CREATE das tabelas
--- Adição da informação AUTO_INCREMENT que não estava nas tabelas, evitando problemas para criar linhas durante a utilização do programa
--- Bom projeto pra vcs 
+CREATE DATABASE TrabalhoSQL;
+USE TrabalhoSQL;
 
 CREATE TABLE ENTREGADOR(
   ID_ENTREGADOR INT AUTO_INCREMENT,
