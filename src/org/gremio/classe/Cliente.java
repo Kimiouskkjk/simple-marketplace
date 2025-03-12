@@ -2,12 +2,14 @@ package org.gremio.classe;//Import necessário para escanear respostas do usuár
 import java.util.Scanner;
 
 public class Cliente extends Usuario {
-    String cpf;
-    Produto carrinho = new Produto("Nintendo Switch", 1000.0, "console da nintendo", 52, "Nintendo", new String[]{"Azul"});
+    int cpf;
     Pedido ultimoPedido;
+    String carrinho;
+    String adress;
 
-    Cliente(String name, String address, String cpf) {
-        super(name, address);
+    public Cliente(String name, String senha, int id ,String adress, int cpf) {
+        super(name, senha, id);
+        this.adress = adress;
         this.cpf = cpf;
     }
 
@@ -26,8 +28,6 @@ public class Cliente extends Usuario {
             scanner.nextLine();
         }
 
-        double valorFinal = Pagamento.calcularValorFinal(carrinho.valor, opcao, parcelas);
-
         String metodo = switch (opcao) {
             case 1 -> "Pix (10% de desconto!)";
             case 2 -> "Débito";
@@ -36,33 +36,14 @@ public class Cliente extends Usuario {
         };
 
         if (!metodo.equals("Inválido")) {
-            Pedido pedido = new Pedido(carrinho,this, metodo, valorFinal);
-            ultimoPedido = pedido;
             System.out.println("org.Interface.classe.Pagamento realizado com sucesso via " + metodo + "!");
-            System.out.println("Valor final: R$" + valorFinal);
-            System.out.println("Você adquiriu: " + carrinho.nome);
-
-            Entregador entregador = new Entregador(pedido);
         } else {
             System.out.println("Opção inválida, tente novamente.");
-        }
-    }
-    public void rastrearPedido(Scanner scanner) {
-        if (ultimoPedido != null) {
-            Entregador entregador = new Entregador(ultimoPedido);
-            entregador.imprimirDetalhesEntrega();
-        } else {
-            System.out.println("Nenhum pedido encontrado para rastreamento.");
         }
     }
     public void visualizarCarrinho() {
         if (carrinho != null) {
             System.out.println("Carrinho:");
-            System.out.println("org.Interface.classe.Produto: " + carrinho.nome);
-            System.out.println("Descrição: " + carrinho.descricao);
-            System.out.println("Valor: R$" + carrinho.valor);
-            System.out.println("Estoque disponível: " + carrinho.estoque);
-            System.out.println("org.Interface.classe.Vendedor: " + carrinho.vendedor);
         } else {
             System.out.println("O carrinho está vazio.");
         }

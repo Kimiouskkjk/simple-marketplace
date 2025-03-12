@@ -5,12 +5,14 @@ import java.util.Scanner;
 
 
 public class Vendedor extends Usuario {
-    String cnpj;
+    int cnpj;
     ArrayList<Produto> produtos = new ArrayList<>();
+    String adress;
 
-    Vendedor(String name, String address, String cnpj) {
-        super(name, address);
+    public Vendedor(String name, String senha, int id, int cnpj, String adress) {
+        super(name, senha, id);
         this.cnpj = cnpj;
+        this.adress = adress;
     }
 
     public void cadastrarProduto(Scanner scanner) {
@@ -27,7 +29,7 @@ public class Vendedor extends Usuario {
         System.out.print("Variações do produto: ");
         String[] cores = scanner.nextLine().split(",");
 
-        Produto novoProduto = new Produto(nome, valor, descricao, estoque, this.name, cores);
+        Produto novoProduto = new Produto(id, nome, valor, descricao, estoque, this.name);
         produtos.add(novoProduto);
         System.out.println("org.Interface.classe.Produto cadastrado com sucesso!");
     }

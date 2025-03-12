@@ -3,14 +3,14 @@ package org.gremio.classe;
 import java.util.Random;
 
 public class Pedido {
-    String numero;
+    int id;
     Produto produto;
     Cliente cliente;
     String metodoPagamento;
     double valorFinal;
 
-    Pedido(Produto produto, Cliente cliente, String metodoPagamento, double valorFinal) {
-        this.numero = gerarNumeroPedido();
+    Pedido(Produto produto,int id, Cliente cliente, String metodoPagamento, double valorFinal) {
+        this.id = id;
         this.produto = produto;
         this.cliente = cliente;
         this.metodoPagamento = metodoPagamento;
@@ -24,9 +24,9 @@ public class Pedido {
     }
 
     public void imprimirDetalhes() {
-        System.out.println("Número do org.Interface.classe.Pedido: " + numero);
+        System.out.println("Número do org.Interface.classe.Pedido: " + id);
         System.out.println("org.Interface.classe.Cliente: " + cliente.name);
-        System.out.println("Endereço: " + cliente.address);
+        System.out.println("Endereço: " + cliente.adress);
         System.out.println("org.Interface.classe.Produto: " + produto.nome);
         System.out.println("Descrição: " + produto.descricao);
         System.out.println("Forma de org.Interface.classe.Pagamento: " + metodoPagamento);

@@ -1,14 +1,16 @@
 package org.gremio.classe;
 
 public class Entregador {
+    int id;
     String transportadora = "Correios";
     Pedido pacote;
-    String rastreio;
+    int rastreio;
     String localizacaoAtual = "Curitiba - PR";
 
-    Entregador(Pedido pacote) {
+    Entregador(Pedido pacote, int id) {
         this.pacote = pacote;
-        this.rastreio = pacote.numero;
+        this.rastreio = pacote.id;
+        this.id = id;
     }
 
     public void imprimirDetalhesEntrega() {

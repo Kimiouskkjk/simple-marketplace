@@ -1,11 +1,14 @@
 package org.gremio.classe;
 
 public class Usuario {
+    int id;
     String name;
-    String address;
+    String senha;
 
-    Usuario(String name, String address) {
+    public Usuario(String name, String senha, int id) {
         this.name = name;
-        this.address = address;
-    }
-}
+        this.senha = senha;
+        this.id = id;
+    }}
+
+
